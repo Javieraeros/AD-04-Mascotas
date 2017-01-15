@@ -1,8 +1,11 @@
 package model;
+import java.util.HashSet;
+import java.util.Set;
+
 import javax.persistence.*;
 @Entity
 @Table(name="dbo.BI_Clientes")
-public class Clientes {
+public class Cliente {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int codigo;
@@ -18,17 +21,24 @@ public class Clientes {
 	
 	@Column(name="Nombre")
 	private String nombre;
-
-	public Clientes(){}
 	
-	public Clientes(int codigo, String telefono, String direccion, String numeroCuenta, String nombre) {
+	@OneToMany(mappedBy="codigoPropietario",cascade= CascadeType.ALL)
+	private Set<Mascota> mascotas=new HashSet();
+
+	public Cliente(){}
+
+	public Cliente(int codigo, String telefono, String direccion, String numeroCuenta, String nombre,
+			Set<Mascota> mascotas) {
 		super();
 		this.codigo = codigo;
 		this.telefono = telefono;
 		this.direccion = direccion;
 		this.numeroCuenta = numeroCuenta;
 		this.nombre = nombre;
+		this.mascotas = mascotas;
 	}
+
+
 
 	public int getCodigo() {
 		return codigo;
@@ -69,8 +79,13 @@ public class Clientes {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	
-	
-	
+
+	public Set<Mascota> getMascotas() {
+		return mascotas;
+	}
+
+	public void setMascotas(Set<Mascota> mascotas) {
+		this.mascotas = mascotas;
+	}
 	
 }

@@ -6,7 +6,7 @@ import java.util.Set;
 import javax.persistence.*;
 @Entity
 @Table(name="dbo.BI_Enfermedades")
-public class Enfermedades {
+public class Enfermedad {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
@@ -14,13 +14,17 @@ public class Enfermedades {
 	@Column(name="Nombre")
 	private String nombre;
 	
-	 @ManyToMany(cascade = {CascadeType.ALL})
-	 @JoinTable(name="BI_Mascotas_Enfermedades", joinColumns={@JoinColumn(name="IDEnfermedad")}, inverseJoinColumns={@JoinColumn(name="Mascota")})
-	 private Set<Mascota> mascotas=new HashSet();
+	@ManyToMany(cascade = {CascadeType.ALL})
+	@JoinTable(name="BI_Mascotas_Enfermedades", joinColumns={@JoinColumn(name="IDEnfermedad")}, inverseJoinColumns={@JoinColumn(name="Mascota")})
+	private Set<Mascota> mascotas=new HashSet();
 	
-	public Enfermedades(){}
+	//TODO preguntar a Leo
+	/*@OneToMany(mappedBy="enfermedad",cascade= CascadeType.ALL)
+	private Set<EnfermedadMascota> enfermedadesMascotas;*/
+	
+	public Enfermedad(){}
 
-	public Enfermedades(int id, String nombre, Set<Mascota> mascotas) {
+	public Enfermedad(int id, String nombre, Set<Mascota> mascotas) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
