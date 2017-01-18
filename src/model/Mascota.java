@@ -35,13 +35,18 @@ public class Mascota {
 	@JoinColumn(name="CodigoPropietario")
 	private Cliente cliente;
 	
+
+	@OneToMany(mappedBy="mascota",cascade= CascadeType.ALL)
+	private Set<EnfermedadMascota> enfermedadesMascotas;
+	
+	/*
 	@ManyToMany(cascade = {CascadeType.ALL},mappedBy="mascotas")
-	private Set<Enfermedad> enfermedades=new HashSet();
+	private Set<EnfermedadMascota> enfermedades=new HashSet();*/
 
 	
 
 	public Mascota(String codigo, String raza, String especie, Date fechaNacimiento, Date fechaFallecimiento,
-			String alias, Set<Visita> visitas, Cliente cliente, Set<Enfermedad> enfermedades) {
+			String alias, Set<Visita> visitas, Cliente cliente) {
 		super();
 		this.codigo = codigo;
 		this.raza = raza;
@@ -51,7 +56,6 @@ public class Mascota {
 		this.alias = alias;
 		this.visitas = visitas;
 		this.cliente = cliente;
-		this.enfermedades = enfermedades;
 	}
 
 	public String getCodigo() {
@@ -118,14 +122,12 @@ public class Mascota {
 		this.cliente = cliente;
 	}
 
-	public Set<Enfermedad> getEnfermedades() {
-		return enfermedades;
+	public Set<EnfermedadMascota> getEnfermedadesMascotas() {
+		return enfermedadesMascotas;
 	}
 
-	public void setEnfermedades(Set<Enfermedad> enfermedades) {
-		this.enfermedades = enfermedades;
+	public void setEnfermedadesMascotas(Set<EnfermedadMascota> enfermedadesMascotas) {
+		this.enfermedadesMascotas = enfermedadesMascotas;
 	}
-	
-	
 	
 }

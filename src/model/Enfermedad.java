@@ -14,21 +14,19 @@ public class Enfermedad {
 	@Column(name="Nombre")
 	private String nombre;
 	
-	@ManyToMany(cascade = {CascadeType.ALL})
+	/*@ManyToMany(cascade = {CascadeType.ALL})
 	@JoinTable(name="BI_Mascotas_Enfermedades", joinColumns={@JoinColumn(name="IDEnfermedad")}, inverseJoinColumns={@JoinColumn(name="Mascota")})
-	private Set<Mascota> mascotas=new HashSet();
+	private Set<Mascota> mascotas=new HashSet();*/
 	
-	//TODO preguntar a Leo
-	/*@OneToMany(mappedBy="enfermedad",cascade= CascadeType.ALL)
-	private Set<EnfermedadMascota> enfermedadesMascotas;*/
+	@OneToMany(mappedBy="enfermedad",cascade= CascadeType.ALL)
+	private Set<EnfermedadMascota> enfermedadesMascotas;
 	
 	public Enfermedad(){}
 
-	public Enfermedad(int id, String nombre, Set<Mascota> mascotas) {
+	public Enfermedad(int id, String nombre) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
-		this.mascotas = mascotas;
 	}
 
 	public int getId() {
@@ -47,15 +45,13 @@ public class Enfermedad {
 		this.nombre = nombre;
 	}
 
-	public Set<Mascota> getMascotas() {
-		return mascotas;
+	public Set<EnfermedadMascota> getEnfermedadesMascotas() {
+		return enfermedadesMascotas;
 	}
 
-	public void setMascotas(Set<Mascota> mascotas) {
-		this.mascotas = mascotas;
+	public void setEnfermedadesMascotas(Set<EnfermedadMascota> enfermedadesMascotas) {
+		this.enfermedadesMascotas = enfermedadesMascotas;
 	}
-
-	
 	
 	
 }
