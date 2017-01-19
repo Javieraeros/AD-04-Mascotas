@@ -1,10 +1,10 @@
-package model;
+/*package model;
 
 import java.sql.Date;
 
 import javax.persistence.*;
 @Entity
-@Table(name="BI_Actualizaciones")
+@Table(name="dbo.BI_Actualizaciones")
 public class Actualizacion {
 	@Column(name="Fecha")
 	private Date fecha;
@@ -28,4 +28,4 @@ public class Actualizacion {
 	private int codigoPropietario;
 	@Column(name="Enfermedad")
 	private String enfermedad;
-}
+}*/

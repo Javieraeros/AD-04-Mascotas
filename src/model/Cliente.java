@@ -22,7 +22,7 @@ public class Cliente {
 	@Column(name="Nombre")
 	private String nombre;
 	
-	@OneToMany(mappedBy="codigoPropietario",cascade= CascadeType.ALL)
+	@OneToMany(mappedBy="cliente",cascade= CascadeType.ALL)
 	private Set<Mascota> mascotas=new HashSet();
 
 	public Cliente(){}

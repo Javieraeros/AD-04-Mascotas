@@ -5,7 +5,7 @@ import java.sql.Date;
 import javax.persistence.*;
 
 @Entity
-@Table(name="dbo.BI_Mascotas")
+@Table(name="dbo.BI_Visitas")
 public class Visita {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)

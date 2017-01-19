@@ -1,10 +1,16 @@
 package model;
 
+import java.io.Serializable;
 import java.sql.Date;
 import javax.persistence.*;
 @Entity
-@Table(name="BI_Mascotas_Enfermedades")
-public class EnfermedadMascota {
+@Table(name="dbo.BI_Mascotas_Enfermedades")
+public class EnfermedadMascota implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	@Id
 	@ManyToOne
@@ -25,6 +31,16 @@ public class EnfermedadMascota {
 	public EnfermedadMascota(){}
 
 	
+
+	public EnfermedadMascota(Enfermedad enfermedad, Mascota mascota, Date fechaInicio, Date fechaCura) {
+		super();
+		this.enfermedad = enfermedad;
+		this.mascota = mascota;
+		this.fechaInicio = fechaInicio;
+		this.fechaCura = fechaCura;
+	}
+
+
 
 	public Date getFechaInicio() {
 		return fechaInicio;

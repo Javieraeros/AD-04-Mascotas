@@ -6,7 +6,7 @@
     <session-factory name="Mascotas">
         <property name="hibernate.connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
         <property name="hibernate.connection.password">123</property>
-        <property name="hibernate.connection.url">jdbc:microsoft:sqlserver://localhost;</property>
+        <property name="hibernate.connection.url">jdbc:sqlserver://localhost;</property>
         <property name="hibernate.connection.username">prueba</property>
         <property name="hibernate.default_catalog">Bichos</property>
         <property name="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</property>
