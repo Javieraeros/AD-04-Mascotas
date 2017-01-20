@@ -1,4 +1,4 @@
-/*package model;
+package model;
 
 import java.sql.Date;
 
@@ -6,6 +6,9 @@ import javax.persistence.*;
 @Entity
 @Table(name="dbo.BI_Actualizaciones")
 public class Actualizacion {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id;
 	@Column(name="Fecha")
 	private Date fecha;
 	@Column(name="Temperatura")
@@ -28,4 +31,4 @@ public class Actualizacion {
 	private int codigoPropietario;
 	@Column(name="Enfermedad")
 	private String enfermedad;
-}*/
+}

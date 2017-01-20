@@ -43,7 +43,7 @@ public class Mascota {
 	@ManyToMany(cascade = {CascadeType.ALL},mappedBy="mascotas")
 	private Set<EnfermedadMascota> enfermedades=new HashSet();*/
 
-	
+	public Mascota(){}
 
 	public Mascota(String codigo, String raza, String especie, Date fechaNacimiento, Date fechaFallecimiento,
 			String alias, Set<Visita> visitas, Cliente cliente) {

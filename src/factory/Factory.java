@@ -16,7 +16,7 @@ public class Factory {
 																			// settings
 																			// from
 																			// hibernate.cfg.xml
-			//configuration.addAnnotatedClass(Actualizacion.class);
+			configuration.addAnnotatedClass(Actualizacion.class);
 			configuration.addAnnotatedClass(Cliente.class);
 			configuration.addAnnotatedClass(Enfermedad.class);
 			configuration.addAnnotatedClass(EnfermedadMascota.class);

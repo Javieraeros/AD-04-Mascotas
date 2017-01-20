@@ -8,6 +8,7 @@ import org.hibernate.Transaction;
 
 import factory.Factory;
 import model.Cliente;
+import model.Mascota;
 
 public class Principal {
 private static SessionFactory sessionFactory = null;
@@ -23,9 +24,14 @@ private static SessionFactory sessionFactory = null;
                 System.out.println("Insertando registro");
                 Transaction tx = session.beginTransaction();
                 
-                Cliente javier=session.get(Cliente.class,106);
+                Cliente javier=session.get(Cliente.class,105);
                 
-        		System.out.println("Nombre:"+javier.getNombre());
+        		System.out.println("Nombre: "+javier.getNombre());
+
+        		Mascota[] misMascotas=new Mascota[javier.getMascotas().size()];
+        		javier.getMascotas().toArray(misMascotas);
+        		System.out.println("Mascota 1: "+misMascotas[0].getAlias());
+        		System.out.println("Mascota 2: "+misMascotas[1].getAlias());
         		
         		tx.commit();
         		
