@@ -57,5 +57,30 @@ public class EnfermedadMascota implements Serializable {
 	public void setFechaCura(Date fechaCura) {
 		this.fechaCura = fechaCura;
 	}
+
+
+
+	public Enfermedad getEnfermedad() {
+		return enfermedad;
+	}
+
+
+
+	public void setEnfermedad(Enfermedad enfermedad) {
+		this.enfermedad = enfermedad;
+	}
+
+
+
+	public Mascota getMascota() {
+		return mascota;
+	}
+
+
+
+	public void setMascota(Mascota mascota) {
+		this.mascota = mascota;
+	}
+	
 	
 }

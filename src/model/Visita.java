@@ -24,6 +24,8 @@ public class Visita {
 	@JoinColumn(name="Mascota")
 	private Mascota mascota;
 
+	public Visita(){}
+	
 	public Visita(int idVisita, Date fecha, byte temperatura, int peso, Mascota mascota) {
 		super();
 		this.idVisita = idVisita;

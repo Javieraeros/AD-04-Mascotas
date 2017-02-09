@@ -10,7 +10,6 @@ import javax.persistence.*;
 @Table(name="dbo.BI_Mascotas")
 public class Mascota {
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private String codigo;
 	
 	@Column(name="Raza")
@@ -129,5 +128,13 @@ public class Mascota {
 	public void setEnfermedadesMascotas(Set<EnfermedadMascota> enfermedadesMascotas) {
 		this.enfermedadesMascotas = enfermedadesMascotas;
 	}
+
+	@Override
+	public String toString() {
+		return "Mascota [codigo=" + codigo + ", raza=" + raza + ", especie=" + especie + ", fechaNacimiento="
+				+ fechaNacimiento + ", fechaFallecimiento=" + fechaFallecimiento + ", alias=" + alias + ", visitas="
+				+ visitas + ", cliente=" + cliente + ", enfermedadesMascotas=" + enfermedadesMascotas + "]";
+	}
+	
 	
 }
