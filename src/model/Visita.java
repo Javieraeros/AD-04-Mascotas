@@ -1,6 +1,7 @@
 package model;
 
 import java.sql.Date;
+import java.sql.Timestamp;
 
 import javax.persistence.*;
 
@@ -12,7 +13,7 @@ public class Visita {
 	private int idVisita;
 	
 	@Column(name="Fecha")
-	private Date fecha;
+	private Timestamp fecha;
 	
 	@Column(name="Temperatura")
 	private byte temperatura;
@@ -26,7 +27,7 @@ public class Visita {
 
 	public Visita(){}
 	
-	public Visita(int idVisita, Date fecha, byte temperatura, int peso, Mascota mascota) {
+	public Visita(int idVisita, Timestamp fecha, byte temperatura, int peso, Mascota mascota) {
 		super();
 		this.idVisita = idVisita;
 		this.fecha = fecha;
@@ -43,11 +44,11 @@ public class Visita {
 		this.idVisita = idVisita;
 	}
 
-	public Date getFecha() {
+	public Timestamp getFecha() {
 		return fecha;
 	}
 
-	public void setFecha(Date fecha) {
+	public void setFecha(Timestamp fecha) {
 		this.fecha = fecha;
 	}
 

@@ -1,6 +1,7 @@
 package model;
 
 import java.sql.Date;
+import java.sql.Timestamp;
 
 import javax.persistence.*;
 @Entity
@@ -10,7 +11,7 @@ public class Actualizacion {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	@Column(name="Fecha")
-	private Date fecha;
+	private Timestamp fecha;
 	@Column(name="Temperatura")
 	private Byte temperatura;
 	@Column(name="Peso")
@@ -34,7 +35,7 @@ public class Actualizacion {
 	
 	public Actualizacion(){}
 	
-	public Actualizacion(Integer id, Date fecha, Byte temperatura, Integer peso, String codigoMascota, String raza,
+	public Actualizacion(Integer id, Timestamp fecha, Byte temperatura, Integer peso, String codigoMascota, String raza,
 			String especie, Date fechaNacimiento, Date fechaFallecimiento, String alias, Integer codigoPropietario,
 			String enfermedad) {
 		super();
@@ -60,11 +61,11 @@ public class Actualizacion {
 		this.id = id;
 	}
 
-	public Date getFecha() {
+	public Timestamp getFecha() {
 		return fecha;
 	}
 
-	public void setFecha(Date fecha) {
+	public void setFecha(Timestamp fecha) {
 		this.fecha = fecha;
 	}
 

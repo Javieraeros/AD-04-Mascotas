@@ -1,5 +1,7 @@
 package view;
 
+import java.sql.Date;
+import java.text.DateFormat;
 import java.util.List;
 import java.util.Scanner;
 
@@ -56,7 +58,7 @@ private static SessionFactory sessionFactory = null;
                 		Enfermedad miEnfermedad=session.get(Enfermedad.class, idEnfermedad);
                 		miEM.setEnfermedad(miEnfermedad);
                 		miEM.setMascota(nuevaMascota);
-                		miEM.setFechaInicio(miAct.getFecha());
+                		miEM.setFechaInicio(new Date(miAct.getFecha().getTime()));
                 		session.save(miEM);
                 	}
                 	
